@@ -9,33 +9,34 @@ echo "Welcome to the world of Bashell!"
 echo "My name is Baldethor the Sheller. What is your name?"
 echo -n "Enter your name : "
 read Pname
+export BADVENTPNAME="$Pname"
 clear
-echo "Well $Pname, I'm glad to meet you! I hope your ready for your great adventure to attain Ultimate Glory!" 
+echo "Well $Pname, I'm glad to meet you! I hope your ready for your great adventure to attain Ultimate Glory!"
 # First enter read. Used to give player
 # time to read text before moving on
 echo -n "[Enter] to continue... "
-read En 
+read En
 clear
 echo "Okay, first things first, $Pname. I will act as your...well..sort of like a guide,
- as I accompany you on your grand adventure. You see I'm an expert travel enthusiast and 
- somewhat of a minstrel or bard, so I will also be recording your adventure so that its 
+ as I accompany you on your grand adventure. You see I'm an expert travel enthusiast and
+ somewhat of a minstrel or bard, so I will also be recording your adventure so that its
  sweet tune may be sung in the Halls of Epicness for many a century to come."
 echo -n "[Enter] to continue... "
 read En
 clear
 ret1=0
-# First return loop. Uses ret1 variable and will continue looping 
+# First return loop. Uses ret1 variable and will continue looping
 # through if play does not answer with "yes" or with "no"
 while [ $ret1 -lt 1 ]; do
 	echo " So are you ready to become an epic adventurer and attain Ultimate Glory?"
 	echo -n "Answer [yes, no] : "
 	read a1
 	clear
-	case $a1 in 
- 		yes ) echo "Okay!! Great!!" ; 
+	case $a1 in
+ 		yes ) echo "Okay!! Great!!" ;
 				ret1=`expr $ret1 + 1` ;;
-		no ) echo "Okay...well, take a moment to prepare yourself"; 
-				echo "Just hit [Enter] when your ready..." 
+		no ) echo "Okay...well, take a moment to prepare yourself";
+				echo "Just hit [Enter] when your ready..."
 				read En ; clear ;
 				ret1=`expr $ret1 + 1` ;;
 		* ) clear ; echo " It's a simple yes or no question. Let's try it again." ;;
@@ -64,14 +65,14 @@ read En
 clear
 echo " You must choose which path we will take to get to the Castle
 	of Elusive Glory. Will we go to the left and travel through
-	the Bog of Sorrows, or will we go the right and travel 
+	the Bog of Sorrows, or will we go the right and travel
 	through the Desert of Insanities?"
 
-# Choice  point. Player must choose either 
+# Choice  point. Player must choose either
 # left or right, Bog of Sorrows or Desert of Insanity
 # respectively. Uses the tag1 variable to "tag" which
-# choice the player makes, and will be used 
-# to define the course of the story and game 
+# choice the player makes, and will be used
+# to define the course of the story and game
 # after this first real decision
 # left -> tag1 becomes equal to 1
 # right -> tag1 stays equal to 0
@@ -82,13 +83,13 @@ while [ $ret1 -lt 1 ]; do
 	read a2
 	clear
 	echo " Okay we'll go $a2!"
-	case $a2 in 
+	case $a2 in
  		left ) echo "So you head left to the Bog of Sorrows.$Pname, I have a feeling this
 				is going to be the sad part of your story. " ;
 				ret1=`expr $ret1 + 1`;
 				tag1=`expr $tag1 + 1` ;;
 		right ) echo "So you head right to the Desert of Insanities. $Pname, I have a feeling that
-					things are about to get crazy."; 
+					things are about to get crazy.";
 					ret1=`expr $ret1 + 1` ;;
 		* ) echo " What? What are you saying? Say $Pname, what was really in that waterskin you were
 				slerping from? We can either go left or right, so let's try this
@@ -100,34 +101,34 @@ clear
 # where tag1=1 is the Bog of Sorrows path under the "then" statement and tag1=0
 # is the Desert of Insanity Path under the "else" statement
 if [ $tag1 = 1 ]; then
-	echo " You walk swiftly down the road until you finally come to the edge 
+	echo " You walk swiftly down the road until you finally come to the edge
 		of the Bog of Sorrows. You take a deep breath, then start the trudge
 		through the awful bog."
 	echo -n "[Enter] to continue... "
-	read En		
+	read En
 	clear
 	echo "Erch, globble, glurppity derp, the squishy land masses yelp as
 		you continue your march through the sorrowful bog."
 	echo -n "[Enter] to continue... "
-	read En	
+	read En
 	clear
 # Introduces a problem in the bog
 # allows player to choose from two options
 
 	echo "Then suddenly...a feeling of sorrow washes over your entire
-		being. Tears begin to well in your eyes as the most saddening 
-		and sorrowful moments of your life flash through your mind, 
-		seemingly all at once and crying out in cacauphonous chorus 
-		\"There is nothing worth continuing for...Oh $Pname..life is 
-		but a sad song..do not fight the sorrow, for we do not write 
+		being. Tears begin to well in your eyes as the most saddening
+		and sorrowful moments of your life flash through your mind,
+		seemingly all at once and crying out in cacauphonous chorus
+		\"There is nothing worth continuing for...Oh $Pname..life is
+		but a sad song..do not fight the sorrow, for we do not write
 		the lyrics and it cannot be changed...Just give in to sorrow.\""
 	echo -n "[Enter] to continue... "
-	read En	
+	read En
 	clear
 	echo " What will you do $Pname?..You can either let the sorrow take you
 			or you can fight the sorrow."
 	echo -n "[Enter] to continue... "
-	read En	
+	read En
 	clear
 	ret1=0
 	while [ $ret1 -lt 1 ]; do
@@ -136,11 +137,11 @@ if [ $tag1 = 1 ]; then
 		clear
 # Sorrow challenge: yes leads to end of game
 # no leads to continuing on through the game
-		case $a3 in 
- 			yes ) echo " You decide to give into sorrow. You then fall 
-					to the ground and curl into a ball. It is here that you  
-					begin to weep as a wee babe. Then a vengeful bog worm 
-					surfaces from its deep dank underbog cavern and 
+		case $a3 in
+ 			yes ) echo " You decide to give into sorrow. You then fall
+					to the ground and curl into a ball. It is here that you
+					begin to weep as a wee babe. Then a vengeful bog worm
+					surfaces from its deep dank underbog cavern and
 					devours your fetal positioned body." ;
 						echo -n "[Enter] to continue... " ;
 						read En	; clear ;
@@ -148,32 +149,32 @@ if [ $tag1 = 1 ]; then
 						echo -n "[Enter] to continue... " ;
 						read En	;
 						exit ;;
-			no ) echo "Good $Pname! You decide not to give into sorrow. You fight 
+			no ) echo "Good $Pname! You decide not to give into sorrow. You fight
 					back mentally against the sorrow, thinking of green pastures,
 					bright colored flowers, and happy monents from your life."
 					echo -n "[Enter] to continue... "
-					read En	
+					read En
 					clear
-					echo " Suddenly a loud shriek pierces the air around your 
+					echo " Suddenly a loud shriek pierces the air around your
 						ears..Then just as quick as it had set upon you,
 						the wash of sorrow vacates you. You have broken
-						the spell of the vengeful bog worms." 
+						the spell of the vengeful bog worms."
 					echo -n "[Enter] to continue... "
-					read En	
+					read En
 					clear
 					ret1=`expr $ret1 + 1` ;;
-			* ) echo " What? What are you saying? Come on $Pname, you must make 
+			* ) echo " What? What are you saying? Come on $Pname, you must make
 					a defininte decision of yes or no. Let's try it again." ;;
 		esac
 	done
 # End of BOS
 # Begin DOI here under "else"
 else
-		clear		
+		clear
 		echo -n "[Enter] to continue... "
 		read En
 		clear
-		echo "You walk swiftly down the road until you finally come to the edge 
+		echo "You walk swiftly down the road until you finally come to the edge
 		of the Desert of Insanities. You take a deep breath, then start the trudge
 		through the demented desert."
 		echo -n "[Enter] to continue... "
@@ -182,13 +183,13 @@ else
 		echo " You are walking and then suddenly it hits you. A
 			a bath of insane delusions start to rinse through your
 			mind. You cringe as flaming apples and serpents made of rope
-			along with dozens of other insane delusions pass through your 
+			along with dozens of other insane delusions pass through your
 			mind and crowd your vision."
 		echo -n "[Enter] to continue... "
 		read En
 		clear
 		echo " You can feel the insanity making its way to the very
-			core of your mind. You fall to your knees under the 
+			core of your mind. You fall to your knees under the
 			weight of the delusions. Now you must decide whether or
 			not you will give in or not..."
 		echo -n "[Enter] to continue... "
@@ -200,10 +201,10 @@ else
 		read a4
 # Insanity challenge: yes leads to end of game
 # no leads to continuing on through the game
-		case $a4 in 
- 			yes ) echo " You decide to give in to insanity. You then are taken 
-					over by the insanity. You run through the sands to the golden 
-					turnip statue you seem to see. You are then swallowed whole 
+		case $a4 in
+ 			yes ) echo " You decide to give in to insanity. You then are taken
+					over by the insanity. You run through the sands to the golden
+					turnip statue you seem to see. You are then swallowed whole
 					by a vehement desert toad." ;
 						echo -n "[Enter] to continue... " ;
 						read En	; clear ;
@@ -211,21 +212,21 @@ else
 						echo -n "[Enter] to continue... " ;
 						read En	;
 						exit ;;
-			no ) echo "Good $Pname! You decide not to give in to insanity. You fight 
+			no ) echo "Good $Pname! You decide not to give in to insanity. You fight
 					back mentally against the insanity, thinking of calm breezes,
 					empty rooms, and sweet delicious strawberry cream puffs."
 					echo -n "[Enter] to continue... "
-					read En	
+					read En
 					clear
-					echo " Suddenly a loud croak rumbles through the air around your 
+					echo " Suddenly a loud croak rumbles through the air around your
 						ears..Then just as quick as it had set upon you,
 						the bath of insanity vacates you. You have broken the
-						spell of the vehement desert toad." 
+						spell of the vehement desert toad."
 					echo -n "[Enter] to continue... "
-					read En	
-					clear	
+					read En
+					clear
 					ret1=`expr $ret1 + 1` ;;
-			* ) echo " What? What are you saying? Come on $Pname, you must make 
+			* ) echo " What? What are you saying? Come on $Pname, you must make
 					a defininte decision of yes or no. Let's try it again." ;;
 		esac
 	done
@@ -235,7 +236,7 @@ fi
 # Continue with tag1=1 leaving the bog
 # and tag1=0 leaving the desert
 
-# Define place variable as based on value of 
+# Define place variable as based on value of
 # tag1
 if [ $tag1 = 1 ]
 	then
@@ -247,49 +248,49 @@ fi
 # reconverge to head to the castle
 echo " You walk for a while more and then.....You see it,
 the end of the $place. You rush out of the terrible $place
-and jump excitedly onto the bright green patch of grass 
+and jump excitedly onto the bright green patch of grass
 that signals the nearing of the Castle of Elusive Glory."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 castle="Castle of Elusive Glory"
-echo " Well $Pname, the $castle is not much further. Let's not" 
+echo " Well $Pname, the $castle is not much further. Let's not"
 echo " dilly dally. There is much glory for you to attain!"
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
-echo " You feel the winds of triumph tickling your hair, as the" 
-echo " cool breeze presses at your heels upon heading to the $castle" 
-echo "You continue walking for quite some time until, just over the edge of" 
-echo " a small wild hill, you spot it!! The $castle!!" 
+echo " You feel the winds of triumph tickling your hair, as the"
+echo " cool breeze presses at your heels upon heading to the $castle"
+echo "You continue walking for quite some time until, just over the edge of"
+echo " a small wild hill, you spot it!! The $castle!!"
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
-echo "You feel the excitement rush through your body. You take off" 
-echo " in an elated run, images of pecan pies, fig trees, banana bread, and" 
+echo "You feel the excitement rush through your body. You take off"
+echo " in an elated run, images of pecan pies, fig trees, banana bread, and"
 echo " all things related to success racing through your mind."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo " You run straight to the front door of the castle. It appears"
 echo " to be closed and locked. Your bright eyed illusions of fame"
 echo " and fortune dim, just a bit as you begin to wonder how you"
 echo " you might get in through such a strong locked door..."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo "You decide to do the something simple...You knock...."
 echo " kla-thunk kla-thunk kla-thunk, the sound echoes, as "
 echo " your knocking fever heightens.."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo " Just as you give up on the activity, a troll appears, a short"
-echo " fat, hairy beasty. With dagger like fangs loosed and small beadie " 
+echo " fat, hairy beasty. With dagger like fangs loosed and small beadie "
 echo " eyes, the troll stares upon your visage. A minute or so"
 echo " passes and then the troll begins to speak."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 Tname="Uuglius"
 echo "\"$Tname is my name,\" The troll says, \" and I assume that"
@@ -297,7 +298,7 @@ echo " you have come to my master's home in search of Ultimate Glory.\""
 echo " You quickly bobble your head back and forth "
 echo " in agreement with the troll's assumption."
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo " Well, I $Tname have a challenge for you. It is simple. A riddle."
 echo " Should you get correctly guess the answer to my riddle I $Tname, "
@@ -305,7 +306,7 @@ echo " will allow you to enter my master's home and waltz, if you"
 echo " prefer waltzing to walking, straight to my masters chambers."
 echo " Well traveller do you accept the challenge of $Tname?"
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo " Okay $Pname, you've been challenged. I hope you are up to this troll's challenge."
 echo " You can either except $Tname's challenge or give up."
@@ -316,23 +317,23 @@ ret1=0
 		clear
 # Challenge of the troll. Yes leads to troll's riddle
 # no leads to the end of the of game
-		case $a5 in 
+		case $a5 in
  			yes ) echo " You decide to accept the troll's challenge. That's the spirit
 						$Pname, show this troll who is the lord of riddles." ;
 						echo -n "[Enter] to continue... " ;
-						read En 
+						read En
 						ret1=`expr $ret1 + 1`;;
 			no ) echo "Oh...okay, $Pname..You decide to give up. It was fun while
 it lasted...Too bad it won't make much of an epic tale..."
 					echo -n "[Enter] to continue... "
-					read En	
+					read En
 					clear
-					echo " Thus ends the adventure of $Pname, just as the Ultimate Glory was so near." 
+					echo " Thus ends the adventure of $Pname, just as the Ultimate Glory was so near."
 					echo -n "[Enter] to continue... "
-					read En	
-					clear	
+					read En
+					clear
 					exit ;;
-			* ) echo " What? What are you saying? Come on $Pname, you must make 
+			* ) echo " What? What are you saying? Come on $Pname, you must make
 					a defininte decision of yes or no. Let's try it again." ;;
 		esac
 	done
@@ -342,7 +343,7 @@ echo " and your body the defiance of bold confidence as you"
 echo " scream out in the most resonant and majestic voice "
 echo " you can muster, \"YESSS!!!!\" "
 echo -n "[Enter] to continue... "
-read En	
+read En
 clear
 echo " The troll glares at you for a moment and then begins to
 speak, \"Very well then, let us begin.\" "
@@ -352,7 +353,7 @@ echo "\"My riddle is, Do you believe that you can really defeat my master?\", gr
 ret6=0
 while [ $ret6 -lt 1 ]; do
 echo -n  " Well $Pname, do you have it in you? [yes : no]"
-read a6 
+read a6
 	case $a6 in
 		yes) echo "Yes, you must truly believe that if you are to suceed." ;
 			ret6=`expr $ret6 + 1` ;;
@@ -361,13 +362,13 @@ read a6
 			echo " So ends the adventure of $Pname..." ;
 				exit ;;
 		*)  echo " That's not a sufficient answer, try again." ;;
-		
+
 	esac
  done
 sleep 1
-clear 
+clear
 echo " The troll then grunts twice and the door swings open."
-echo "Well $Pname, it seems the troll's riddle was more a test of your 
+echo "Well $Pname, it seems the troll's riddle was more a test of your
  confidence and faith, than an actual riddle. Oh well, we made it past
  this test. Let's head on inside!"
 echo -n "Enter to continue..."
@@ -378,11 +379,11 @@ echo " You walk on through the massive corridor and up to a large set of steps
 echo -n "Enter to continue..."
 read En
 clear
-echo " As you reach the top of the steps you look back and your gaze is drawn to the 
+echo " As you reach the top of the steps you look back and your gaze is drawn to the
 large ominous figure sitting upon a giant stone throne seat..."
 echo "Uhhh...$Pname...it's him..I doubted the day I may see the Dark King, but it is he,
 and now you must challenge him if you are to attain Ultimate Glory, and if I do say,
-we didn't make it this far to wimp out now." 
+we didn't make it this far to wimp out now."
 echo -n "Enter to continue..."
 read En
 clear
@@ -396,13 +397,13 @@ kHP=50
 POT=2
 CEILING=10
 while [ "$HP" -gt 0 ]; do
-	
+
  number=15 # initialize
 	while [ "$number" -ge $CEILING ]
 		do
 		  number=$RANDOM
 		done
-		
+
 	case $number in
 		[0-2])  if [ $dtag -eq 0 ]; then
 			echo "The Dark King attacks and does 2 damage!"
@@ -413,7 +414,7 @@ while [ "$HP" -gt 0 ]; do
 			fi;;
 		[3-4]) if [ $dtag -eq 0 ]; then
 			echo "The Dark King heavy attacks and does 3 damage!"
-			HP=`expr $HP - 3` 
+			HP=`expr $HP - 3`
 			else
 				echo "The Dark King heavy attacks but only does 2 damage"
 				HP=`expr $HP - 2`
@@ -429,10 +430,10 @@ while [ "$HP" -gt 0 ]; do
 	echo "Defend (plus 1 defense) [d]"
 	echo "Potion (plus 5 HP) [p]"
 	echo -n "Type Choice [a:d:p], then hit Enter :: "
-	read move 
+	read move
 	clear
 	dtag=0
-	case $move in 
+	case $move in
 		a) echo " You attack and do 5 damage!"
 			kHP=`expr $kHP - 5` ;;
 		d) echo "You assume a defensive stance!"
@@ -442,7 +443,7 @@ while [ "$HP" -gt 0 ]; do
 			HP=`expr $HP + 5`
 			POT=`expr $POT - 1`
 			else
-				echo "You reach for a potion but you don't have any potions!!" 
+				echo "You reach for a potion but you don't have any potions!!"
 			fi ;;
 		*) echo "You stand in place with a strange look on your face...." ;;
 	esac
@@ -463,7 +464,7 @@ if [ $battag -eq 1 ] ; then
 		echo -n "Enter to continue..."
 		read En
 		clear
-	else 
+	else
 		echo "You were killed by the Dark King....."
 		echo "Oh $Pname...you were so close, but thus ends your story..."
 		echo -n "Enter to continue..."
@@ -491,7 +492,7 @@ echo ""
 echo "                                                                        "
 echo "                                                                        "
 echo "________________________________U_______________________________________"
-sleep 1 
+sleep 1
 clear
 echo ""
 echo ""
@@ -677,29 +678,3 @@ echo "Writer/Developer: Blake Wilson"
 sleep 5
 clear
 exit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
